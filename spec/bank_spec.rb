@@ -28,6 +28,9 @@ describe '.withdraw' do
   it 'withdraws money' do
     expect(subject.withdraw(45)).to eq 'You have withdrawn £45 from your account.'
   end
+  it 'raises error if withdrawal > account' do
+    expect{subject.withdraw(110)}.to raise_error 'Insufficient funds.'
+  end
 end
 end
 
