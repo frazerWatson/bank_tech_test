@@ -6,10 +6,31 @@ describe Bank do
     expect(subject).to respond_to 'deposit'
   end
 
-  it 'returns ammount' do
-    expect(subject.deposit(100)).to eq '100'
+describe '.deposit' do
+  it 'deposits money' do
+    expect(subject.deposit(100)).to eq 'You desposited £100 into your account.'
   end
 end
+
+describe '.balance' do
+  before(:each) do
+      subject.deposit(100)
+    end
+  it 'returns balance' do
+    expect(subject.balance).to eq 'Your current balance is £100'
+    end
+  end
+
+describe '.withdraw' do
+  before(:each) do
+      subject.deposit(100)
+    end
+  it 'withdraws money' do
+    expect(subject.withdraw(45)).to eq 'You have withdrawn £40 from your account.'
+  end
+end
+end
+
 
 
 
