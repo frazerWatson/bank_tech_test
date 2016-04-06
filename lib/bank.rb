@@ -1,21 +1,23 @@
 class Bank
 
-  attr_accessor :account
+  def account
+    attr_accessor_with_default :account, 0
+  end
 
   def deposit(money_in)
-    @my_account = @account.to_i + money_in
+    @account = @account.to_i + money_in
     p 'You desposited £' + money_in.to_s + ' into your account.'
   end
 
   def balance
-    p 'Your current balance is £' + @my_account.to_s
+    p 'Your current balance is £' + @account.to_s
   end
 
   def withdraw(money_out)
-    @my_account = @account.to_i - money_out
-    p ''
+    raise 'Insufficient funds.' if money_out > @account
+    @account = @account.to_i - money_out
+    p 'You have withdrawn £' + money_out.to_s + ' from your account.'
   end
-
 
 end
 

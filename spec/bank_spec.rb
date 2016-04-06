@@ -26,7 +26,7 @@ describe '.withdraw' do
       subject.deposit(100)
     end
   it 'withdraws money' do
-    expect(subject.withdraw(45)).to eq 'You have withdrawn £40 from your account.'
+    expect(subject.withdraw(45)).to eq 'You have withdrawn £45 from your account.'
   end
 end
 end
