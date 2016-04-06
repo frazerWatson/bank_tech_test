@@ -1,7 +1,7 @@
 class Bank
 
   def account
-    attr_accessor_with_default :account, 0
+    @account = 0
   end
 
   def deposit(money_in)
@@ -20,5 +20,3 @@ class Bank
   end
 
 end
-
-
